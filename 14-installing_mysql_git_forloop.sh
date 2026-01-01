@@ -35,7 +35,7 @@ then
 fi
 
 
-for $software in $@
+for software in $@
 do
 
     dnf list installed $software &>> $LOGFILENAME
