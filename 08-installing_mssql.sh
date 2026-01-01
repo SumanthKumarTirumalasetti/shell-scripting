@@ -12,7 +12,7 @@ dnf list installed mysql-server
 
 if [ $? -ne 0 ]
 then
-    echo "Mysql is already installed"
-else
     dnf install mysql-server -y
+else
+    echo "Mysql is already installed"
 fi
