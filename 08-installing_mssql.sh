@@ -7,7 +7,7 @@ then
     echo "user must have supervison privilages to execute this script"
 fi
 
-dnf install mysql-server -y
+dnf list installed mysql-server
 
 if [ $? -ne 0 ]
 then
