@@ -35,17 +35,17 @@ then
 fi
 
 
-for $package in $@
+for $software in $@
 do
 
-    dnf list installed $package &>> $LOGFILENAME
+    dnf list installed $software &>> $LOGFILENAME
 
     if [ $? -ne 0 ]
     then
-        dnf install $package -y &>> $LOGFILENAME
-        VALIDATE $? "Installing $package"
+        dnf install $software -y &>> $LOGFILENAME
+        VALIDATE $? "Installing $software"
     else
-        echo -e "$package is already $O installed $N"
+        echo -e "$software is already $O installed $N"
     fi
 
 
