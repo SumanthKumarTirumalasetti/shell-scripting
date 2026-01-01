@@ -43,7 +43,14 @@ FILESTODELETE=$(find /var/log/expense-logs -type f -name "*.log" -mtime +14)
 
 # echo $FILESTODELETE
 
-for i in $FILESTODELETE
+# for i in $FILESTODELETE
+# do
+#     echo $i
+# done
+
+while read -r file
 do
-    echo $i
-done
+    echo "Deleting files $FILESTODELETE"
+    rm -rf $FILESTODELETE
+done <<< $FILESTODELETE
+
