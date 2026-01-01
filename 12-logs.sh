@@ -20,7 +20,7 @@ VALIDATE() {
     if [ $1 -ne 0 ]
     then
         echo -e "$2 .. $R FAILURE $N"
-        exit1
+        exit 1
     else
         echo -e "$2 .. $G SUCCESS $N"
     fi
@@ -31,7 +31,7 @@ VALIDATE() {
 if [ $USERID -ne 0 ]
 then
     echo "ERROR:: You must have sudo access to execute this script"
-    exit1
+    exit 1
 fi
 
 dnf list installed mysql &>> $LOGFILENAME
