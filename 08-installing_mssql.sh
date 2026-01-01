@@ -5,6 +5,7 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
     echo "user must have supervison privilages to execute this script"
+    exit 1
 fi
 
 dnf list installed mysql-server
