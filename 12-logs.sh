@@ -11,7 +11,7 @@ mkdir -p /var/log/expense-logs
 
 LOGS_DIR="/var/log/expense-logs"
 FILENAME=$(echo $0 | cut -d "." -f1)
-TIMESTAMP=$(date +%Y-%m-%d %H:%M:%S)
+TIMESTAMP=$(date +%Y-%m-%d_%H:%M:%S)
 LOGFILENAME="$LOGS_DIR/$FILENAME-$TIMESTAMP.log"
 
 
