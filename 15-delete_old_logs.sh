@@ -41,4 +41,9 @@ CHECKROOT
 
 FILESTODELETE=$(find /var/log/expense-logs -type f -name "*.log" -mtime +14)
 
-echo $FILESTODELETE
+# echo $FILESTODELETE
+
+for i in $FILESTODELETE
+do
+    echo $i
+done
