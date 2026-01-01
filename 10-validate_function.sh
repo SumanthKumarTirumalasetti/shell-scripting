@@ -40,3 +40,13 @@ then
 else
     echo "Git is already installed"
 fi
+
+dnf list installed ansible
+
+if [ $? -ne 0 ]
+then
+    dnf install ansible -y
+    VALIDATE $? "Installing Ansible"
+else
+    echo "Ansible is already installed"
+fi
