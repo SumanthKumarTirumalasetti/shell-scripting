@@ -36,7 +36,7 @@ then
     dnf install mysql-server -y
     VALIDATE $? "Installing Mysql"
 else
-    echo -e  "$O Mysql is already installed $N"
+    echo -e  "Mysql is already $O installed $N"
 fi
 
 dnf list installed git
@@ -46,7 +46,7 @@ then
     dnf install git -y
     VALIDATE $? "Installing Git"
 else
-    echo -e "$O Git is already installed $N"
+    echo -e "Git is already $O installed $N"
 fi
 
 dnf list installed ansible
@@ -56,5 +56,5 @@ then
     dnf install ansible -y
     VALIDATE $? "Installing Ansible"
 else
-    echo -e "$O Ansible is already installed $N"
+    echo -e "Ansible is already $O installed $N"
 fi
