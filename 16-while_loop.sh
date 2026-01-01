@@ -2,5 +2,5 @@
 
 while read -r line
 do 
-    echo $read
+    echo $line
 done < 15-delete_old_logs.sh
