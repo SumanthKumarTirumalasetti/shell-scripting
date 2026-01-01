@@ -16,6 +16,7 @@ then
     if [ $? -eq 0 ]
     then
         echo "Mysql installed Successfully"
+    fi
 else
     echo "Mysql is already installed"
 fi
