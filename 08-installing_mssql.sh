@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-dnf list installed mysql-server
+dnf list installed mysql-server 
 
 if [ $? -ne 0 ]
 then
