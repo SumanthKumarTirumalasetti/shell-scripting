@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 USERID=$(id -u)
 
 R="\e[31m"
@@ -17,7 +15,7 @@ VALIDATE() {
         echo -e "$2 .. $R FAILURE $N"
         exit1
     else
-        echo "$2 .. $G SUCCESS $N"
+        echo -e "$2 .. $G SUCCESS $N"
     fi
 
 }
@@ -26,7 +24,7 @@ VALIDATE() {
 if [ $USERID -ne 0 ]
 then
     echo "ERROR:: You must have sudo access to execute this script"
-    exit 1
+    exit1
 fi
 
 dnf list installed mysql
