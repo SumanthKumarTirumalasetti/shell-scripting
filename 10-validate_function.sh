@@ -26,7 +26,7 @@ dnf list mysql
 if [ $? -ne 0 ]
 then
     dnf install mysql-server -y
-    VALIDATE() $? "Installing Mysql"
+    VALIDATE $? "Installing Mysql"
 else
     echo "Mysql is already installed"
 fi
@@ -36,7 +36,7 @@ dnf list git
 if [ $? -ne 0 ]
 then
     dnf install git -y
-    VALIDATE() $? "Installing Git"
+    VALIDATE $? "Installing Git"
 else
     echo "Git is already installed"
 fi
