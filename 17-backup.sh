@@ -11,6 +11,9 @@ SOURCE_DIRECTORY=$1
 DESTINATION_DIRECOTRY=$2
 NUMBEROFDAYS=${3:14}
 
+mkdir -p /home/ec2-user/app-logs
+mkdir -p /home/ec2-user/destination-logs
+
 
 if [ $# -lt 2]
 then
