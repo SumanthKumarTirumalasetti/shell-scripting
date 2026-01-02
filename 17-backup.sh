@@ -25,12 +25,12 @@ USAGE() {
     exit 1
 }
 
-if [ -d $SOURCE_DIRECTORY ]
+if [ ! -d $SOURCE_DIRECTORY ]
 then
     USAGE
 fi
 
-if [ -d $DESTINATION_DIRECOTRY ]
+if [ ! -d $DESTINATION_DIRECOTRY ]
 then
     USAGE
 fi
