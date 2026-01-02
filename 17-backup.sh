@@ -18,6 +18,15 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 mkdir -p /home/ec2-user/app-logs
 mkdir -p /home/ec2-user/destination-logs
 
+dnf list installed zip
+
+if [ $? -ne 0 ]
+then
+    dnf install zip -y
+else
+    echo "zip is already installed"
+fi
+
 USAGE() {
     echo -e "$R USAGE:: $N backup <SOURCE_DIR> <DEST_DIR> <DAYS(Optional)>"
     exit 1
@@ -48,5 +57,5 @@ then
 
     ZIPFILEPATH="$ZIPFILEDEST/$ZIPFILENAME-$TIMESTAMP.zip"
     find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +14 | zip -@ $ZIPFILEPATH
-    
+
 fi
