@@ -39,7 +39,7 @@ fi
 FINDFILES=$(find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +14)
 echo "$FINDFILES"
 
-if [ -e "$FINDFILES" ]
+if [ -n "$FINDFILES" ]
 then
     echo "file exists"
 fi
