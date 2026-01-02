@@ -11,6 +11,10 @@ SOURCE_DIRECTORY=$1
 DESTINATION_DIRECOTRY=$2
 NUMBEROFDAYS=${3:-14}
 
+ZIPFILEDEST=$DESTINATION_DIRECOTRY
+ZIPFILENAME=$(echo $0 | cut -d "." $f1)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
+
 mkdir -p /home/ec2-user/app-logs
 mkdir -p /home/ec2-user/destination-logs
 
@@ -41,5 +45,8 @@ echo "$FINDFILES"
 
 if [ -n "$FINDFILES" ]
 then
-    echo "file exists"
+
+    ZIPFILEPATH="$ZIPFILEDEST/$ZIPFILENAME-$TIMESTAMP.zip"
+    find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +14 | zip -@ $ZIPFILEPATH
+    
 fi
