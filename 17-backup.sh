@@ -37,4 +37,4 @@ fi
 
 
 FINDFILES=$(find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +14)
-echo "$FINDFILES"
+echo $FINDFILES
