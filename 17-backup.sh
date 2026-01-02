@@ -36,5 +36,5 @@ then
 fi
 
 
-FINDFILES=$(find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +14)
+FINDFILES=$(find $SOURCE_DIRECTORY -type f -name "*.log" -mtime $NUMBEROFDAYS)
 echo $FINDFILES
