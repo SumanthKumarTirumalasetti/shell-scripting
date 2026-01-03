@@ -61,4 +61,5 @@ then
     then
         echo "Files to be deleted: $FINDFILES"
         rm -rf $FINDFILES
+    fi
 fi
