@@ -57,9 +57,13 @@ then
 
     ZIPFILEPATH="$ZIPFILEDEST/$ZIPFILENAME-$TIMESTAMP.zip"
     find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +14 | zip -@ $ZIPFILEPATH
-    if [ -e $DESTINATION_DIRECOTRY ]
+    if [ -e $ZIPFILEPATH ]
     then
-        echo "Files to be deleted: $FINDFILES"
-        rm -rf $FINDFILES
+        echo -e "Successfully created zip file for files older than $DAYS"
+        while read -r filepath
+        do
+            echo "Files to be deleted : $filepath"
+            rm -rf $filepath
+        done <<< $FINDFILES
     fi
 fi
