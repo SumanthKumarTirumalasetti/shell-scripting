@@ -67,5 +67,5 @@ then
         done <<< $FINDFILES
     fi
 else
-    echo "No files found older than $NUMBEROFDAYS
+    echo "No files found older than $NUMBEROFDAYS"
 fi
