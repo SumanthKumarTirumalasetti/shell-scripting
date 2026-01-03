@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LOGSDIR=/home/ec2-user/for-logs
+FILESTOCREATE=("app.log" "bap.log" "console.log" "managment.log" "tomme.log" "sequce.log" "tomee.xml")
+
+for i in $FILESTOCREATE
+do
+    touch -d 20140101 $i
+done
