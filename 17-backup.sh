@@ -49,7 +49,7 @@ then
 fi
 
 
-FINDFILES=$(find $SOURCE_DIRECTORY -type f -name "*.log" -mtime $NUMBEROFDAYS)
+FINDFILES=$(find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +$NUMBEROFDAYS)
 echo "$FINDFILES"
 
 if [ -n "$FINDFILES" ]
@@ -67,5 +67,5 @@ then
         done <<< $FINDFILES
     fi
 else
-    echo "No files found older than $NUMBEROFDAYS"
+    echo "No files found older than $NUMBEROFDAYS
 fi
