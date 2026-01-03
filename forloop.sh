@@ -7,6 +7,5 @@ cd "$LOGSDIR" || exit 1
 
 for i in "${FILESTOCREATE[@]}"
 do
-    cd $LOGS_DIR
     touch -d 20140101 $i
 done
