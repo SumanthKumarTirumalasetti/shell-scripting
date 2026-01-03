@@ -54,7 +54,12 @@ echo "$FINDFILES"
 
 if [ -n "$FINDFILES" ]
 then
+
     ZIPFILEPATH="$ZIPFILEDEST/$ZIPFILENAME-$TIMESTAMP.zip"
     find $SOURCE_DIRECTORY -type f -name "*.log" -mtime +14 | zip -@ $ZIPFILEPATH
+    if [ -e $DESTINATION_DIRECOTRY ]
+    then
+        echo "Files to be deleted: $FINDFILES"
+        rm -rf $FINDFILES
+    fi
 fi
-
